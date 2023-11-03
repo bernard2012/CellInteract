@@ -169,3 +169,8 @@ TSLP    Il7r    1.830379
 - **second column**: receptor (from mouse); 
 - **third column**: interaction z-score.
 
+#### Output file list
+- `epithelium_stroma_interactions.txt` [Example output](https://media.githubusercontent.com/media/bernard2012/CellInteract.data/main/example.out/epithelium_stroma_interactions.txt)
+- `stroma_epithelium_interactions.txt` [Example output](https://media.githubusercontent.com/media/bernard2012/CellInteract.data/main/example.out/stroma_epithelium_interactions.txt)
+- `mouse_stroma_stroma_interactions.txt` [Example output](https://media.githubusercontent.com/media/bernard2012/CellInteract.data/main/example.out/mouse_stroma_stroma_interactions.txt)
+- `human_epithelium_epithelium_interactions.txt` [Example output](https://media.githubusercontent.com/media/bernard2012/CellInteract.data/main/example.out/human_epithelium_epithelium_interactions.txt)
