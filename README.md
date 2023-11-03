@@ -59,9 +59,7 @@ GACCGACTGAAGCGTC,105,70.56410256410257
 Prepare gene expression matrix. 
 Running `test.interactions.py`:
 ```
-python3 test.interactions.py --mouse xenomake.filtered.mouse.txt \
---human xenomake.filtered.human.txt \
---barcode spatial_barcodes_visium_filtered.csv --outdir out
+python3 test.interactions.py --mouse xenomake.filtered.mouse.txt --human xenomake.filtered.human.txt --barcode spatial_barcodes_visium_filtered.csv --outdir out
 ```
 
 #### Step 2:
@@ -72,19 +70,13 @@ Discretize gene expression of each gene into 5 bins by K-means: 0 (lowest expres
   - Output file:
 `mouse_genes_cell_interactions_clusters.pkl` in `--inputdir out`
 ```
-python3.6 test.interactions.step2.py --inputdir out \
---orthology human.mouse.orthologs.valid.txt \
---interactlist cell.cell.interactions.good \
---nstart 10 --do-organism mouse
+python3.6 test.interactions.step2.py --inputdir out --orthology human.mouse.orthologs.valid.txt --interactlist cell.cell.interactions.good --nstart 10 --do-organism mouse
 ```
 - Running `test.interactions.step2.py` on human
   - Output file:
 `human_genes_cell_interactions_clusters.pkl` in `--inputdir out`
 ```
-python3.6 test.interactions.step2.py --inputdir out \
---orthology human.mouse.orthologs.valid.txt \
---interactlist cell.cell.interactions.good \
---nstart 10 --do-organism human
+python3.6 test.interactions.step2.py --inputdir out --orthology human.mouse.orthologs.valid.txt --interactlist cell.cell.interactions.good --nstart 10 --do-organism human
 ```
 
 #### Step 3:
@@ -93,17 +85,11 @@ Run cell-cell interactions using Giotto's algorithm. Returns significant ligand-
 
 - Run `calc.distance.giotto.py` to get **epithelial-epithelial** interactions (setting `--do-organism human`)
 ```
-python3 calc.distance.giotto.py --inputdir out \
---barcode spatial_barcodes_visium_filtered.csv \
---orthology human.mouse.orthologs.valid.txt \
---interactlist cell.cell.interactions.good --do-organism human
+python3 calc.distance.giotto.py --inputdir out --barcode spatial_barcodes_visium_filtered.csv --orthology human.mouse.orthologs.valid.txt --interactlist cell.cell.interactions.good --do-organism human
 ```
 - Run `calc.distance.giotto.py` to get **stromal-stromal** interactions (setting `--do-organism mouse`)
 ```
-python3 calc.distance.giotto.py --inputdir out \
---barcode spatial_barcodes_visium_filtered.csv \
---orthology human.mouse.orthologs.valid.txt \
---interactlist cell.cell.interactions.good --do-organism mouse
+python3 calc.distance.giotto.py --inputdir out --barcode spatial_barcodes_visium_filtered.csv --orthology human.mouse.orthologs.valid.txt --interactlist cell.cell.interactions.good --do-organism mouse
 ```
 - Output files are located in the same directory as `--inputdir out`.
 - Description of output file `mouse_stroma_stroma_interactions.txt`:
@@ -138,17 +124,12 @@ Tnc Itgav   21.398422
 
 Binning gene expression for cross-compartment interactions
 ```
-python3.6 test.interactions.stroma.epi.py --inputdir out \
---orthology human.mouse.orthologs.valid.txt \
---interactlist cell.cell.interactions.good --nstart 10
+python3.6 test.interactions.stroma.epi.py --inputdir out --orthology human.mouse.orthologs.valid.txt --interactlist cell.cell.interactions.good --nstart 10
 ```
 
 Test ligand receptor interactions:
 ```
-python3.6 calc.distance.stroma.epi.giotto.py --inputdir out \
---barcode ../spatial_barcodes_visium_filtered.csv \
---orthology human.mouse.orthologs.valid.txt \
---interactlist cell.cell.interactions.good
+python3.6 calc.distance.stroma.epi.giotto.py --inputdir out --barcode ../spatial_barcodes_visium_filtered.csv --orthology human.mouse.orthologs.valid.txt --interactlist cell.cell.interactions.good
 ```
 
 - Output files are located in directory specified in `--inputdir out`. `epithelium_stroma_interactions.txt` and `stroma_epithelium_interactions.txt`.
