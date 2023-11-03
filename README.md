@@ -3,9 +3,9 @@
 ### Pre-requisites:
 
 #### Input files:
-- `human.mouse.orthologs.valid.txt` - human:mouse ortholog list (get from github)
-- `cell.cell.interactions.good` - a list of ligand-receptor pairs (get from github)
-- `xenomake.filtered.mouse.txt` - Xenomake mouse gene expression
+- `human.mouse.orthologs.valid.txt` - human:mouse ortholog list (get from this repo)
+- `cell.cell.interactions.good` - a list of ligand-receptor pairs (get from this repo)
+- `xenomake.filtered.mouse.txt` - Xenomake mouse gene expression. [Example file](https://github.com/bernard2012/CellInteract.data/raw/main/xenomake.filtered.mouse.txt)
   - Gene, Barcode, UMI (positive) *tab-delimited*:
 ```
 2900026A02Rik   AGGCCTGAGAATCTCG    2
@@ -21,7 +21,7 @@
 2900026A02Rik   TTCCCGGCGCCAATAG    1
 ...
 ```
-- `xenomake.filtered.human.txt` - Xenomake human gene expression
+- `xenomake.filtered.human.txt` - Xenomake human gene expression [Example file](https://github.com/bernard2012/CellInteract.data/raw/main/xenomake.filtered.human.txt)
   - Gene, Barcode, UMI (positive) *tab-delimited*
 ```
 MKLN1   AACTTGCCCGTATGCA    1
@@ -40,7 +40,7 @@ MKLN1   GTATAGGACTCAGTAG    1
 MKLN1   GATCCCTTTATACTGC    2
 ...
 ```
-- `spatial_barcodes_visium_filtered.csv` - a list of Visium filtered barcodes (i.e. in-tissue barcodes) and their positions
+- `spatial_barcodes_visium_filtered.csv` - a list of Visium filtered barcodes (i.e. in-tissue barcodes) and their positions [Example file](https://github.com/bernard2012/CellInteract.data/raw/main/spatial_barcodes_visium_filtered.csv)
   - barcode,x,y
 ```
 AAGAGCTCTTTATCGG,50,68.92307692307692
